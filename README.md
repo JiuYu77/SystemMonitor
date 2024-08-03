@@ -12,8 +12,14 @@ git clone https://github.com/JiuYu77/SystemMonitor.git
 
 # 编译
 ## 确保已经安装了Qt
+本项目基于`Qt5.14.2`搭建界面。
 
 ## 修改CMakeLists.txt
+```bash
+set(CMAKE_PREFIX_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64")
+修改为：
+set(CMAKE_PREFIX_PATH "你的 Qt gcc目录")
+```
 
 ## 创建build文件夹
 ```bash
