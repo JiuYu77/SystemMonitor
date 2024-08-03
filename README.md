@@ -39,6 +39,13 @@ make
 
 # language.sh
 `language.sh`用于生成 .ts文件 和 .qm文件。
+
+```bash
+qt="/home/jyu/install/Qt5.14.2/5.14.2/gcc_64/"
+修改为：
+qt="你的 Qt gcc目录"
+```
+
 ```bash
 bash language.sh
 ```
