@@ -1,0 +1,10 @@
+.vscode/
+build/
+bin/
+lib/
+CMakeLists.txt.user.*
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+SystemMonitor_autogen/
+CMakeFiles/
