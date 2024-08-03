@@ -1,0 +1,30 @@
+{
+    "windowIcon": ":/res/images/logo64.ico",
+    "toolIcon": ":/res/images/small.png",
+    "SysAppStyle":{
+        "begin": "SystemMonitorApp{padding:0px;margin:0px;",
+        "border": "border: 2px solid #ff00ff00;",
+        "border-radius": "border-radius:10px;",
+        "bkgImage": "background-image: url(:/res/images/logo64.ico);",
+        "bkgColor": "background-color: rgba(253,253,254,1);",
+        "end": "}",
+        "border_color": true,
+        "use_border": true
+    },
+    "labelStyle":{
+        "begin":"QLabel#label_up,QLabel#label_up_speed,QLabel#label_down,QLabel#label_down_speed,QLabel#label_cpu,QLabel#label_cpu_usage_rate,QLabel#label_memory,QLabel#label_memory_usage_rate{",
+        "fontColor": "color: green;",
+        "fontSize":"font-size:12pt;",
+        "end":"}"
+    },
+    "position":{
+        "x": 0,
+        "y": 0
+    },
+    "auto_start": false,
+    "Language": {
+        "flag": false,
+        "language": "中文(简体)",
+        "index":0
+    }
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SystemMonitor
+Exec=/home/jyu/apro/SystemMonitor/SystemMonitor/bin/SystemMonitor
+Icon=/home/jyu/apro/SystemMonitor/SystemMonitor/res/images/logo64.ico
+Terminal=false
+MimeType=text/plain;x-scheme-handler/zotero;application/x-research-info-systems;text/x-research-info-systems;text/ris;application/x-endnote-refer;application/x-inst-for-Scientific-info;application/mods+xml;application/rdf+xml;application/x-bibtex;text/x-bibtex;application/marc;application/vnd.citationstyles.style+xml
+X-GNOME-SingleWindow=true

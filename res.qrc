@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>res/images/logo64.ico</file>
+        <file>res/images/small.png</file>
+        <file>res/language/SystemMonitor_en_US.qm</file>
+        <file>res/language/SystemMonitor_zh_CN.qm</file>
+    </qresource>
+</RCC>
