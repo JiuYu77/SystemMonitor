@@ -6,8 +6,33 @@ UTF-8
 界面实现基于`Qt5.14.2`。
 
 # clone
+```bash
+git clone https://github.com/JiuYu77/SystemMonitor.git
+```
 
-# 编译&安装
+# 编译
+## 确保已经安装了Qt
+
+## 修改CMakeLists.txt
+
+## 创建build文件夹
+```bash
+mkdir build
+cd build
+```
+
+## cmake
+```bash
+cmake ..
+```
+
+## make
+```bash
+make
+```
+
+# 运行截图
+
 
 # 致谢
 [ctguLMY/linux_terminal_monitor](https://github.com/ctguLMY/linux_terminal_monitor)
