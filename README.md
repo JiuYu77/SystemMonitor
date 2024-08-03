@@ -38,13 +38,13 @@ make
 ```
 
 # language.sh
-`language.sh`用于生成.ts文件 和 .qm文件
+`language.sh`用于生成 .ts文件 和 .qm文件。
 ```bash
 bash language.sh
 ```
 
 # init_desktop.sh
-`init_desktop.sh`设置了`SystemMonitor.desktop`
+`init_desktop.sh`设置了`SystemMonitor.desktop`。
 ```bash
 # rm ~/.local/share/applications/SystemMonitor.desktop
 bash init_desktop.sh
