@@ -24,7 +24,6 @@ void SystemMonitorApp::initUI()
     settings_dialog = new SettingsDialog(this); // 设置界面
     config_data = settings_dialog->config_data;
     setConfigJson();
-    // setSheet("../qss/style.qss");
 }
 void SystemMonitorApp::paintEvent(QPaintEvent *event)
 {
