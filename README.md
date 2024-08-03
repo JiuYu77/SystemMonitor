@@ -33,8 +33,11 @@ make
 
 # 运行截图
 ![](res/images/readme_01.png)
+
 ![](res/images/readme_02.png)
+
 ![](res/images/readme_03_English.png)
+
 ![](res/images/readme_04_English.png)
 
 # 致谢
