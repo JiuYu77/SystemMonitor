@@ -57,6 +57,13 @@ if(NOT EXISTS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
   file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 endif()
 
+# 存放打包可执行文件的目录
+set(tar_dir "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}-${PROJECT_VERSION}-${PROJECT_VERSION_SYSTEM}-${PROJECT_VERSION_ARCH}")
+if(NOT EXISTS ${tar_dir})
+  file(MAKE_DIRECTORY ${tar_dir})
+endif()
+
+
 # 提供对应模块的*.cmake文件的父目录
 set(CMAKE_PREFIX_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64")
 
@@ -193,3 +200,9 @@ set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_PACKAGE_NAME "${CMAKE_PROJECT_NAME}-${PROJECT_VERSION_ARCH}")
 set(CPACK_DEBIAN_PACKAGE_NAME ${CMAKE_PROJECT_NAME})
 include(CPack)
+
+# 使用execute_process调用tar命令创建压缩包
+execute_process(
+  COMMAND ${CMAKE_COMMAND} -E tar czf "project-${PROJECT_VERSION}.tar.gz" --format=tar.gz --exclude=CMakeLists.txt --exclude=${CMAKE_BINARY_DIR} *
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+)

@@ -8,3 +8,4 @@ cmake_install.cmake
 Makefile
 SystemMonitor_autogen/
 CMakeFiles/
+SystemMonitor-*
