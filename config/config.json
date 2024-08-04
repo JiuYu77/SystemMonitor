@@ -8,7 +8,7 @@
         "begin": "SystemMonitorApp{padding:0px;margin:0px;",
         "bkgColor": "background-color: rgba(253,253,254,1);",
         "bkgImage": "background-image: url(:/res/images/logo64.ico);",
-        "border": "border: 2px solid #ff00ff00;",
+        "border": "border: 2px solid #ffffff00;",
         "border-radius": "border-radius:10px;",
         "border_color": true,
         "end": "}",

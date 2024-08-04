@@ -113,7 +113,7 @@ public:
     ~NetSpeed();
     NET_INTERFACE *p_interface;
     NET_SPEED net_speed;
-    NET_SPEED thread_net();
+    void thread_net();
 
 };
 

@@ -294,7 +294,7 @@ NetSpeed::NetSpeed()
 }
 NetSpeed::~NetSpeed()
 {}
-NET_SPEED NetSpeed::thread_net()
+void NetSpeed::thread_net()
 {
     // printf("%s\n", __FUNCTION__);
     int nums = 0;
@@ -303,5 +303,4 @@ NET_SPEED NetSpeed::thread_net()
     get_network_speed(p_interface);
     // show_netinterfaces(p_interface, 1);
     net_speed = get_total_network_speed(p_interface);
-    return net_speed;
 }

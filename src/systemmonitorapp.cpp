@@ -79,16 +79,15 @@ void* SystemMonitorApp::update_cpu_mem(void* arg)
 // 更新 网速
 void* SystemMonitorApp::update_speed(void* arg)
 {
-    NET_SPEED net_speed;
     Labels* labels = (Labels*)arg;
     NetSpeed net;
 
     while(1)
     {
         // 网速
-        net_speed = net.thread_net();
-        labels->down->setText(QString::fromStdString(net_speed.d_speed_str));
-        labels->up->setText(QString::fromStdString(net_speed.u_speed_str));
+        net.thread_net();
+        labels->down->setText(QString::fromStdString(net.net_speed.d_speed_str));
+        labels->up->setText(QString::fromStdString(net.net_speed.u_speed_str));
         sleep(1);
     }
     return NULL;
