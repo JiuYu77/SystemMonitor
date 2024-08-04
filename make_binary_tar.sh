@@ -8,6 +8,7 @@ cp -r bin/ config/ lib/ res/ install.sh uninstall.sh README.md SystemMonitor.des
 name=`ls |grep ^SystemMonitor-[0-9]\.[0-9]\.[0-9]-linux-x86_64$`
 
 echo $name
-echo
-tar -czf $name.tar.gz SystemMonitor-*/
+tar_name=$name.tar.gz
+echo $tar_name
+tar -czf $tar_name SystemMonitor-*/
 
