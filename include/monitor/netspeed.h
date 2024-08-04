@@ -98,12 +98,6 @@ void cal_netinterface_speed(double *u_speed, double *d_speed,
  */
 void get_network_speed(NET_INTERFACE *p_net);
 NET_SPEED get_total_network_speed(NET_INTERFACE *p_net);
-/**
- * @description: 网络信息监控线程
- * @param {*}
- * @return {*}
- */
-void *thread_net(void *arg);
 
 
 class NetSpeed
@@ -113,7 +107,9 @@ public:
     ~NetSpeed();
     NET_INTERFACE *p_interface;
     NET_SPEED net_speed;
+    int nums;  // 网卡数量
     void thread_net();
+    int get_interface_info(NET_INTERFACE **net, int *n);
 
 };
 

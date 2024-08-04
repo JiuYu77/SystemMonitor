@@ -12,7 +12,7 @@ void removeFile(std::string file_path)
     }
 }
 /**
- * @description 复制文件
+ * @description: 复制文件
  * @param src {std::string} 源文件
  * @param dest {std::string} 目标文件
  * @author

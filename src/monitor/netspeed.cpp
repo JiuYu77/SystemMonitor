@@ -277,30 +277,99 @@ NET_SPEED get_total_network_speed(NET_INTERFACE *p_net)
     }
     return net_speed;
 }
-void *thread_net(void *arg)
-{
-    printf("%s\n", __FUNCTION__);
-
-    while (1) {
-        printf("\n***********************************************************\n");
-        get_network_speed(p_interface);
-        show_netinterfaces(p_interface, 1);
-    }
-}
 
 NetSpeed::NetSpeed()
 {
+    p_interface = NULL;
     p_interface = (NET_INTERFACE *)malloc(sizeof(NET_INTERFACE));
+    nums = 0;  // 网卡数量
+    get_interface_info(&p_interface, &nums);  //网卡结构体指针初始化
 }
 NetSpeed::~NetSpeed()
 {}
+/**
+ * @description: 网络信息监控线程
+ * @param {*}
+ * @return {*}
+ */
 void NetSpeed::thread_net()
 {
     // printf("%s\n", __FUNCTION__);
-    int nums = 0;
-    //网卡结构体指针初始化
-    get_interface_info(&p_interface, &nums);
     get_network_speed(p_interface);
     // show_netinterfaces(p_interface, 1);
     net_speed = get_total_network_speed(p_interface);
+}
+int NetSpeed::get_interface_info(NET_INTERFACE **net, int *n)
+{
+    int fd;
+    int num = 0;
+    struct ifreq buf[16];
+    struct ifconf ifc;
+
+    NET_INTERFACE *p_temp = NULL;
+    (*net)->next = NULL;
+
+    if ((fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        close(fd);
+        printf("socket open failed\n");
+    }
+
+    ifc.ifc_len = sizeof(buf);
+    ifc.ifc_buf = (caddr_t)buf;
+
+    if (!ioctl(fd, SIOCGIFCONF, (char *)&ifc)) {
+        // get interface nums
+        num = ifc.ifc_len / sizeof(struct ifreq);
+        *n = num;
+
+        // find all interfaces;
+        while (num-- > 0) {
+            // exclude lo interface
+            /* if (!strcmp("lo", buf[num].ifr_name))
+            continue; */
+
+            // get interface name
+            strcpy((*net)->name, buf[num].ifr_name);
+#if DEBUG
+            printf("name:%8s\t", (*net)->name);
+#endif
+            // get the ipaddress of the interface
+            if (!(ioctl(fd, SIOCGIFADDR, (char *)&buf[num]))) {
+
+                memset((*net)->ip, 0, 16);
+                strcpy(
+                    (*net)->ip,
+                    inet_ntoa(((struct sockaddr_in *)(&buf[num].ifr_addr))->sin_addr));
+#if DEBUG
+                printf("IP:%16s\t", (*net)->ip);
+#endif
+            }
+
+            // get the mac of this interface
+            if (!ioctl(fd, SIOCGIFHWADDR, (char *)(&buf[num]))) {
+
+                memset((*net)->mac, 0, 13);
+
+                snprintf((*net)->mac, 13, "%02x%02x%02x%02x%02x%02x",
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[0],
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[1],
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[2],
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[3],
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[4],
+                         (unsigned char)buf[num].ifr_hwaddr.sa_data[5]);
+#if DEBUG
+                printf("mac:%12s\n", (*net)->mac);
+#endif
+            }
+            if (num >= 1) {
+                p_temp = (NET_INTERFACE *)malloc(sizeof(NET_INTERFACE));
+                memset(p_temp, 0, sizeof(NET_INTERFACE));
+                p_temp->next = *net;
+                *net = p_temp;
+            }
+        }
+        return 0;
+    } else {
+        return -1;
+    }
 }
