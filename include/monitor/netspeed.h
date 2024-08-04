@@ -53,63 +53,26 @@ typedef struct _NET_INTERFACE {
     struct _NET_INTERFACE *next; /*链表指针*/
 } NET_INTERFACE;
 
-/**
- * @description: 打开网络接口设备文件/proc/net/dev
- * @param {FILE} *
- * @return {*}
- */
-void open_netconf(FILE **fd);
-/**
- * @description: 获取网卡数量和IP地址
- * @param {NET_INTERFACE} * 
- * @param {int} *n 本机网卡数量
- * @return {*}
- */
-int get_interface_info(NET_INTERFACE **net, int *n);
-/**
- * @description: 显示本机活动网络接口
- * @param {NET_INTERFACE} *p_net
- * @return {*}
- */
-void show_netinterfaces(NET_INTERFACE *p_net, int n);
-/**
- * @description: 获取网卡当前时刻的收发包信息
- * @param {char} *name
- * @param {RTX_BYTES} *rtx
- * @return {*}
- */
-void get_rtx_bytes(char *name, RTX_BYTES *rtx);
-/**
- * @description: 计算网卡的上下行网速
- * @param {double} *u_speed
- * @param {double} *d_speed
- * @param {unsignedchar} *level
- * @param {RTX_BYTES} *rtx0
- * @param {RTX_BYTES} *rtx1
- * @return {*}
- */
-void cal_netinterface_speed(double *u_speed, double *d_speed,
-                            unsigned char *level, RTX_BYTES *rtx0,
-                            RTX_BYTES *rtx1);
-/**
- * @description: 获取主机网卡速度信息
- * @param {NET_INTERFACE} *p_net
- * @return {*}
- */
-void get_network_speed(NET_INTERFACE *p_net);
-NET_SPEED get_total_network_speed(NET_INTERFACE *p_net);
-
 
 class NetSpeed
 {
 public:
     NetSpeed();
     ~NetSpeed();
-    NET_INTERFACE *p_interface;
+    FILE *net_dev_file = NULL; // 文件/proc/net/dev
+    NET_INTERFACE *p_interface;  // 本机网络接口信息结构体
     NET_SPEED net_speed;
     int nums;  // 网卡数量
+    void open_netconf(FILE **fd);
     void thread_net();
     int get_interface_info(NET_INTERFACE **net, int *n);
+    void show_netinterfaces(NET_INTERFACE *p_net, int n);
+    void get_rtx_bytes(char *name, RTX_BYTES *rtx);
+    void cal_netinterface_speed(double *u_speed, double *d_speed,
+                                unsigned char *level, RTX_BYTES *rtx0,
+                                RTX_BYTES *rtx1);
+    void get_network_speed(NET_INTERFACE *p_net);
+    NET_SPEED get_total_network_speed(NET_INTERFACE *p_net);
 
 };
 

@@ -22,8 +22,8 @@
         "fontSize": "font-size:12pt;"
     },
     "position": {
-        "x": 1617,
-        "y": 471
+        "x": 1604,
+        "y": 347
     },
     "toolIcon": ":/res/images/small.png",
     "version": "1.0.0-linux-x86_64 (2024.08.03)",
