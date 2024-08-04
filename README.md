@@ -50,13 +50,19 @@ qt="你的 Qt gcc目录"
 bash language.sh
 ```
 
-# init_desktop.sh
-`init_desktop.sh`设置了`SystemMonitor.desktop`。
+# install.sh
+`install.sh`设置了`SystemMonitor.desktop`。
 ```bash
 # rm ~/.local/share/applications/SystemMonitor.desktop
-bash init_desktop.sh
+bash install.sh
 ```
 然后，你可以通过点击**图标**，来启动程序。
+
+# uninstall.sh
+`uninstall.sh`删除`SystemMonitor.desktop`。
+```bash
+bash uninstall.sh
+```
 
 # 运行截图
 ![](res/images/readme_01.png)
