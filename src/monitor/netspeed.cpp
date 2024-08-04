@@ -288,16 +288,35 @@ void *thread_net(void *arg)
     }
 }
 
-NET_SPEED thread_net()
+NET_SPEED thread_net(NET_INTERFACE *p_interface)
 {
     // printf("%s\n", __FUNCTION__);
     int nums = 0;
-    //网卡结构体指针初始化
     p_interface = (NET_INTERFACE *)malloc(sizeof(NET_INTERFACE));
+    //网卡结构体指针初始化
     get_interface_info(&p_interface, &nums);
     get_network_speed(p_interface);
     // show_netinterfaces(p_interface, 1);
     NET_SPEED net_speed = get_total_network_speed(p_interface);
-    free(p_interface);
+    // free(p_interface);
+    return net_speed;
+}
+
+NetSpeed::NetSpeed()
+{
+    p_interface = (NET_INTERFACE *)malloc(sizeof(NET_INTERFACE));
+}
+NetSpeed::~NetSpeed()
+{}
+NET_SPEED NetSpeed::thread_net()
+{
+    // printf("%s\n", __FUNCTION__);
+    int nums = 0;
+    //网卡结构体指针初始化
+    get_interface_info(&p_interface, &nums);
+    get_network_speed(p_interface);
+    // show_netinterfaces(p_interface, 1);
+    net_speed = get_total_network_speed(p_interface);
+    // free(p_interface);
     return net_speed;
 }

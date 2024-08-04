@@ -181,8 +181,8 @@ install(FILES ${CMAKE_SOURCE_DIR}/SystemMonitor.desktop DESTINATION $ENV{HOME}/.
 install(FILES ${CMAKE_SOURCE_DIR}/bin/SystemMonitor DESTINATION /usr/bin)
 message("$HOME: " $ENV{HOME} "  CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
 
-# INSTALL(FILES ${LIBS_DIR}/libdb-4.8.so ${LIBS_DIR}/libdbxml-2.5.so ${LIBS_DIR}/libxerces-c-3.0.so ${LIBS_DIR}/libxqilla.so.5 ${LIBS_DIR}/libxqilla.so.5.0.2  DESTINATION /usr/lib)
-# INSTALL(FILES ${LIBS_DIR}/libdb-4.8.so ${LIBS_DIR}/libdbxml-2.5.so ${LIBS_DIR}/libxerces-c-3.0.so ${LIBS_DIR}/libxqilla.so.5 ${LIBS_DIR}/libxqilla.so.5.0.2  DESTINATION /usr/lib)
+
+INSTALL(FILES ${LIBS_DIR}/x86_64-linux-gnu/libc.so.6 ${LIBS_DIR}/x86_64-linux-gnu/libstdc++.so.6 DESTINATION /usr/lib)
 
 
 # --------------------------------------------------------------
@@ -201,8 +201,3 @@ set(CPACK_PACKAGE_NAME "${CMAKE_PROJECT_NAME}-${PROJECT_VERSION_ARCH}")
 set(CPACK_DEBIAN_PACKAGE_NAME ${CMAKE_PROJECT_NAME})
 include(CPack)
 
-# 使用execute_process调用tar命令创建压缩包
-execute_process(
-  COMMAND ${CMAKE_COMMAND} -E tar czf "project-${PROJECT_VERSION}.tar.gz" --format=tar.gz --exclude=CMakeLists.txt --exclude=${CMAKE_BINARY_DIR} *
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-)

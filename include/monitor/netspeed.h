@@ -104,7 +104,18 @@ NET_SPEED get_total_network_speed(NET_INTERFACE *p_net);
  * @return {*}
  */
 void *thread_net(void *arg);
-// NET_INTERFACE thread_net2();
-NET_SPEED thread_net();
+
+NET_SPEED thread_net(NET_INTERFACE *p_interface);
+
+class NetSpeed
+{
+public:
+    NetSpeed();
+    ~NetSpeed();
+    NET_INTERFACE *p_interface;
+    NET_SPEED net_speed;
+    NET_SPEED thread_net();
+
+};
 
 #endif // NETSPEED_H
