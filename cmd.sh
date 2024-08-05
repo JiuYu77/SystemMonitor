@@ -27,7 +27,7 @@ help(){
         "\tbash cmd.sh init                         执行: git init and first commit\n"\
         "\tbash cmd.sh user [username] [email]      执行: git config user\n"\
         "\tbash cmd.sh conf_list                    执行: git config --list\n"\
-        "\tbash cmd.sh reset_cache                  执行: git rm cache 更新仓库管理规则"
+        # "\tbash cmd.sh reset_cache                  执行: git rm cache 更新仓库管理规则"
 }
 
 if [[ $arg1 = 'install' ]];then
@@ -44,7 +44,7 @@ elif [[ $arg1 = 'ldd' ]];then
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
 elif [[ $arg1 == 'add_push' || $arg1 == 'push' ]];then
-    add "$arg2"
+    add_push "$arg2"
 elif [[ $arg1 == 'init' ]];then
     init
 elif [[ $arg1 == 'user' ]];then
