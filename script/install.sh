@@ -2,7 +2,9 @@
 
 
 # Run this to update the launcher file with the current path to the application icon
-APPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# APPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+APPDIR=`pwd`
+
 if [ -w "$APPDIR"/SystemMonitor.desktop ]; then
     echo "set_launcher_icon:..."
     sed -i -e "s@^Icon=.*@Icon=$APPDIR/res/images/logo64.ico@" "$APPDIR"/SystemMonitor.desktop
@@ -12,7 +14,6 @@ else
 fi
 
 # Run this to update the launcher file with the current path to the application Exec
-APPDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [ -w "$APPDIR"/SystemMonitor.desktop ]; then
 	echo "set_launcher_Exec:..."
 	sed -i -e "s@^Exec=.*@Exec=$APPDIR/bin/SystemMonitor@" "$APPDIR"/SystemMonitor.desktop
@@ -21,8 +22,7 @@ else
 	exit 1
 fi
 
-filename=`pwd`/$0
-root=`dirname $filename`
+root=`pwd`
 echo "root: "$root
 
 echo "Symlink SystemMonitor.desktop into ~/.local/share/applications/:..."

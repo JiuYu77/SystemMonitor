@@ -4,42 +4,42 @@
 <context>
     <name>monitor</name>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="70"/>
+        <location filename="../../src/systemmonitorui.cpp" line="69"/>
         <source>Up</source>
         <translation>Up</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="83"/>
+        <location filename="../../src/systemmonitorui.cpp" line="82"/>
         <source>Down</source>
         <translation>Down</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="104"/>
+        <location filename="../../src/systemmonitorui.cpp" line="103"/>
         <source>MEM</source>
         <translation>MEM</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="131"/>
+        <location filename="../../src/systemmonitorui.cpp" line="130"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="132"/>
+        <location filename="../../src/systemmonitorui.cpp" line="131"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="133"/>
+        <location filename="../../src/systemmonitorui.cpp" line="132"/>
         <source>Restore default configuration</source>
         <translation>Restore default configuration</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="210"/>
+        <location filename="../../src/systemmonitorui.cpp" line="209"/>
         <source>Prompt</source>
         <translation>Prompt</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="211"/>
+        <location filename="../../src/systemmonitorui.cpp" line="210"/>
         <source>Are you sure you want to restore the default configuration?</source>
         <translation>Are you sure you want to restore the default configuration?</translation>
     </message>

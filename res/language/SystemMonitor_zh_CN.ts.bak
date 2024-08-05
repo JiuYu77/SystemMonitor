@@ -4,42 +4,42 @@
 <context>
     <name>monitor</name>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="70"/>
+        <location filename="../../src/systemmonitorui.cpp" line="69"/>
         <source>Up</source>
         <translation>上传</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="83"/>
+        <location filename="../../src/systemmonitorui.cpp" line="82"/>
         <source>Down</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="104"/>
+        <location filename="../../src/systemmonitorui.cpp" line="103"/>
         <source>MEM</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="131"/>
+        <location filename="../../src/systemmonitorui.cpp" line="130"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="132"/>
+        <location filename="../../src/systemmonitorui.cpp" line="131"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="133"/>
+        <location filename="../../src/systemmonitorui.cpp" line="132"/>
         <source>Restore default configuration</source>
         <translation>恢复默认配置</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="210"/>
+        <location filename="../../src/systemmonitorui.cpp" line="209"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="211"/>
+        <location filename="../../src/systemmonitorui.cpp" line="210"/>
         <source>Are you sure you want to restore the default configuration?</source>
         <translation>确定要恢复默认配置？</translation>
     </message>

@@ -169,7 +169,15 @@ target_link_libraries(SystemMonitor PRIVATE Qt5::Widgets)
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
-
+# 设置RPATH（运行时库搜索路径）
+#set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN/../lib")
+set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
+#set_target_properties(${PROJECT_NAME} PROPERTIES
+#    OUTPUT_NAME ${PROJECT_NAME}
+#    INSTALL_RPATH "${ORIGIN}/../lib"
+#)
+#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
+#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "${ORIGIN}/../lib")
 
 # --------------------------------------------------------------
 # Install
