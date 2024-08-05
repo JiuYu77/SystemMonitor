@@ -15,6 +15,6 @@ fi
 
 for var in ${lib_array[@]}
 do
-    echo copy $var $lib_dir
+    echo "copy  "$var"  to  "$lib_dir
     cp "$var" $lib_dir
 done
