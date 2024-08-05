@@ -177,7 +177,7 @@ set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
 #    INSTALL_RPATH "${ORIGIN}/../lib"
 #)
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
-set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
+# set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "${ORIGIN}/../lib")
 
 # --------------------------------------------------------------
