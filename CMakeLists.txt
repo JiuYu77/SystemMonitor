@@ -133,18 +133,21 @@ target_link_libraries(SystemMonitor PRIVATE Qt5::Widgets)
 
 
 # --------------------------------------------------------------
-# Set library search path
+# Set library search path    设置RPATH（运行时库搜索路径）
 # --------------------------------------------------------------
-# 设置RPATH（运行时库搜索路径）
-#set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN/../lib")
-set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
+# BUILD_RPATH
+set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN/../lib") # 可执行文件上一级目录下的lib目录
+#set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN") # 可执行文件所在目录
+#set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN:$ORIGIN/../lib") # 多个目录用:分隔
+
+# INSTALL_RPATH
 #set_target_properties(${PROJECT_NAME} PROPERTIES
 #    OUTPUT_NAME ${PROJECT_NAME}
 #    INSTALL_RPATH "${ORIGIN}/../lib"
 #)
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
-# set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
-#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "${ORIGIN}/../lib")
+#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
+#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
 
 
 # --------------------------------------------------------------
