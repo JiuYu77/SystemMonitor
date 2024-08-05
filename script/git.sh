@@ -12,6 +12,10 @@ add(){
     git add .
     git commit -m "$msg"
 }
+add_push(){
+    add
+    git push
+}
 # 执行git init操作
 init(){
     git init

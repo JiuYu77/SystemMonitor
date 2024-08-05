@@ -23,6 +23,7 @@ help(){
         "\tbash cmd.sh ldd file_path                执行: List dynamic link libraries\n"\
         \
         "\tbash cmd.sh add [message]                执行: git add and commit, not include git push\n"\
+        "\tbash cmd.sh push, add_push [message]     执行: git add, commit and push\n"\
         "\tbash cmd.sh init                         执行: git init and first commit\n"\
         "\tbash cmd.sh user [username] [email]      执行: git config user\n"\
         "\tbash cmd.sh conf_list                    执行: git config --list\n"\
@@ -41,6 +42,8 @@ elif [[ $arg1 = 'ldd' ]];then
     bash script/ldd.sh $arg2
 # git
 elif [[ $arg1 == 'add' ]];then
+    add "$arg2"
+elif [[ $arg1 == 'add_push' || $arg1 == 'push' ]];then
     add "$arg2"
 elif [[ $arg1 == 'init' ]];then
     init
