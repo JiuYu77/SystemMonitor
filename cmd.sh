@@ -41,7 +41,7 @@ elif [[ $arg1 = 'ldd' ]];then
     bash script/ldd.sh $arg2
 # git
 elif [[ $arg1 == 'add' ]];then
-    add $arg2
+    add "$arg2"
 elif [[ $arg1 == 'init' ]];then
     init
 elif [[ $arg1 == 'user' ]];then
