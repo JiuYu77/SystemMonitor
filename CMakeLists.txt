@@ -177,6 +177,7 @@ set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
 #    INSTALL_RPATH "${ORIGIN}/../lib"
 #)
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
+# set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "${ORIGIN}/../lib")
 
 # --------------------------------------------------------------
@@ -185,12 +186,12 @@ set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
 set(LIBS_DIR "$ENV{DBXML_DIR}/lib")
 message("$LIBS_DIR: " ${LIBS_DIR})
 # install(FILES ${CMAKE_SOURCE_DIR}/pro-cc.conf DESTINATION /etc/init)
-install(FILES ${CMAKE_SOURCE_DIR}/SystemMonitor.desktop DESTINATION $ENV{HOME}/.local/share/applications/)
+install(FILES ${CMAKE_SOURCE_DIR}/SystemMonitor.desktop DESTINATION /usr/share/applications/)
 install(FILES ${CMAKE_SOURCE_DIR}/bin/SystemMonitor DESTINATION /usr/bin)
-message("$HOME: " $ENV{HOME} "  CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
 
 
-INSTALL(FILES ${LIBS_DIR}/x86_64-linux-gnu/libc.so.6 ${LIBS_DIR}/x86_64-linux-gnu/libstdc++.so.6 DESTINATION /usr/lib)
+# INSTALL(FILES ${LIBS_DIR}/x86_64-linux-gnu/libc.so.6 ${LIBS_DIR}/x86_64-linux-gnu/libstdc++.so.6 DESTINATION /usr/lib)
+INSTALL(FILES ${LIBS_DIR}/x86_64-linux-gnu/libc.so.6 ${LIBS_DIR}/x86_64-linux-gnu/libstdc++.so.6 DESTINATION /usr/lib/SystemMonitor)
 
 
 # --------------------------------------------------------------
