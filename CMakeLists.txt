@@ -1,5 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 
+# 设置目标系统为Linux，这可以根据你的目标系统进行调整
+set(CMAKE_SYSTEM_NAME Linux)
+ 
+# 设置目标架构为x86_64
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
+# 设置目标架构为ARM
+#set(CMAKE_SYSTEM_PROCESSOR arm)
+
+
 project(SystemMonitor LANGUAGES CXX)
 
 # 定义项目版本号宏  主版本号（MAJOR）、次版本号（MINOR）和修订号（PATCH）
