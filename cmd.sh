@@ -15,6 +15,7 @@ help(){
     fi
     echo -e \
         "  Usage:\n"\
+        "\tbash cmd.sh h, -h, help, --help          执行: help information\n"\
         "\tbash cmd.sh install                      执行: install\n"\
         "\tbash cmd.sh uninstall                    执行: uninstall\n"\
         "\tbash cmd.sh tar                          执行: generate tar.gz\n"\
@@ -50,7 +51,7 @@ elif [[ $arg1 == 'conf_list' ]];then
 elif [[ $arg1 == 'reset_cache' ]];then
     reset_cache
 # help
-elif [[ $arg1 == 'help' || $arg1 == 'h' || $arg1 == '-h' ]];then
+elif [[ $arg1 == 'help' || $arg1 == '--help' || $arg1 == 'h' || $arg1 == '-h' ]];then
     help
 else
     help

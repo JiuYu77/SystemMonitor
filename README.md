@@ -37,6 +37,11 @@ cmake ..
 make
 ```
 # script
+## cmd.sh
+通过`cmd.sh`调用其他bash脚本。
+```bash
+bash cmd.sh --help
+```
 
 ## language.sh
 `language.sh`用于生成 .ts文件 和 .qm文件。
@@ -48,21 +53,21 @@ qt="你的 Qt gcc目录"
 ```
 
 ```bash
-bash script/language.sh
+bash cmd.sh lang
 ```
 
 ## install.sh
 `install.sh`设置了`SystemMonitor.desktop`。
 ```bash
 # rm ~/.local/share/applications/SystemMonitor.desktop
-bash script/install.sh
+bash cmd.sh install
 ```
 然后，你可以通过点击**图标**，来启动程序。
 
 ## uninstall.sh
 `uninstall.sh`删除`SystemMonitor.desktop`。
 ```bash
-bash script/uninstall.sh
+bash cmd.sh uninstall
 ```
 
 # 运行截图
