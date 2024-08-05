@@ -24,9 +24,11 @@ fi
 
 root=`pwd`
 echo "root: "$root
+path=$root/SystemMonitor.desktop
+echo "Symlink_path: "$path
 
 echo "Symlink SystemMonitor.desktop into ~/.local/share/applications/:..."
-ln -s $root/SystemMonitor.desktop ~/.local/share/applications/SystemMonitor.desktop
+ln -s $path ~/.local/share/applications/SystemMonitor.desktop
 
 echo "set_lib..."
 # echo export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$root/lib >> $HOME/.bashrc

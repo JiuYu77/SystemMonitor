@@ -4,8 +4,17 @@
 lib_dir=$PWD"/lib"
 Target=$1
 lib_array=($(ldd $Target | grep -o "/.*" | grep -o "/.*/[^[:space:]]*"))
-$(mkdir $lib_dir)
-for Variable in ${lib_array[@]}
+
+if [ -d "$lib_dir" ]; then
+    echo "目录存在：$lib_dir"
+else
+    echo "目录不存在：$lib_dir"
+    echo "创建目录：$lib_dir"
+    mkdir $lib_dir
+fi
+
+for var in ${lib_array[@]}
 do
-    cp "$Variable" $lib_dir
+    echo copy $var $lib_dir
+    cp "$var" $lib_dir
 done
