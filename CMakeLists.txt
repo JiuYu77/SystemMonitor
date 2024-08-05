@@ -86,7 +86,7 @@ include_directories(include) # 头文件目录
 
 # 添加要编译的文件：(源文件、头文件、ui文件、资源文件)
 set(PROJECT_SOURCES
-    main.cpp
+    src/main.cpp
     src/systemmonitorapp.cpp
     src/systemmonitorui.cpp
     include/systemmonitorapp.h
