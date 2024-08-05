@@ -74,10 +74,10 @@ set(CMAKE_PREFIX_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64")
 
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 
-# set(TS_FILES
-#   config/SystemMonitor_zh_CN.ts
-#   config/SystemMonitor_en_US.ts
-# )
+set(TS_FILES
+  res/language/SystemMonitor_zh_CN.ts
+  res/language/SystemMonitor_en_US.ts
+)
 
 
 include_directories(3rdparty/json-develop/include)
@@ -126,49 +126,15 @@ else()
   )
 endif()
 
-# if(ANDROID)
-#   add_library(SystemMonitor SHARED
-#     src/main.cpp
-#     src/systemmonitorapp.cpp
-#     src/systemmonitorui.cpp
-#     include/systemmonitorapp.h
-#     src/win.cpp
-#     include/win.h
-#     src/settings.cpp
-#     include/settings.h
-#     src/monitor/monitor.cpp
-#     include/monitor/monitor.h
-#     src/monitor/netspeed.cpp
-#     include/monitor/netspeed.h
-#     src/monitor/cpu_mem.cpp
-#     include/monitor/cpu_mem.h
-#     ${TS_FILES}
-#   )
-# else()
-#   add_executable(SystemMonitor
-#     src/main.cpp
-#     src/systemmonitorapp.cpp
-#     src/systemmonitorui.cpp
-#     include/systemmonitorapp.h
-#     src/win.cpp
-#     include/win.h
-#     src/settings.cpp
-#     include/settings.h
-#     src/monitor/monitor.cpp
-#     include/monitor/monitor.h
-#     src/monitor/netspeed.cpp
-#     include/monitor/netspeed.h
-#     src/monitor/cpu_mem.cpp
-#     include/monitor/cpu_mem.h
-#     ${TS_FILES}
-#   )
-# endif()
-
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 target_link_libraries(SystemMonitor PRIVATE Qt5::Widgets)
 
-qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+# qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
+
+# --------------------------------------------------------------
+# Set library search path
+# --------------------------------------------------------------
 # 设置RPATH（运行时库搜索路径）
 #set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN/../lib")
 set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
@@ -179,6 +145,7 @@ set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
 # set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "${ORIGIN}/../lib")
+
 
 # --------------------------------------------------------------
 # Install
