@@ -148,12 +148,13 @@ void SystemMonitorApp::set_SystemMonitorApp_Style()
 {
     QString border_color = strToQstring(config_data["SysAppStyle"]["border"]);
     QString border_radius = strToQstring(config_data["SysAppStyle"]["border-radius"]);
-    if(config_data["SysAppStyle"]["border_color"] == false){
+
+    if(config_data["SysAppStyle"]["border_color"] == false){  // 是否设置边框颜色
         border_color = "";
     }
-    if(config_data["SysAppStyle"]["border-radius"] == false){
-        border_radius = "";
-    }
+    // if(config_data["SysAppStyle"]["border-radius"] == false){ //  是否启用圆角
+    //     border_radius = "";
+    // }
     
     QString qstr = strToQstring(config_data["SysAppStyle"]["begin"]) +
     border_color + border_radius +
