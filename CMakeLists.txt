@@ -80,8 +80,10 @@ endif()
 set(CMAKE_PREFIX_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64")
 
 # export QT_QPA_PLATFORM=xcb  # 提示信息: qt.qpa.plugin: Could not find the Qt platform plugin "dxcb" in "" ===> 则在shell中，手动执行此命令
-# set(QT_QPA_PLATFORM "xcb")
-# set(QT_QPA_PLATFORM_PLUGIN_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64/plugins")  # Qt插件目录。目前不需要设置
+
+# Qt插件目录。This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem. ===> 在shell中，手动执行此命令
+# export QT_QPA_PLATFORM_PLUGIN_PATH=/home/jyu/install/Qt5.14.2/5.14.2/gcc_64/plugins
+
 
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 
