@@ -6,4 +6,4 @@ rm $HOME/.local/share/applications/SystemMonitor.desktop
 
 echo "delete lib..."
 # sed -i '/SystemMonitor/d' $HOME/.bashrc
-# sudo rm /usr/lib/SystemMonitor
+# sudo rm -r /usr/lib/SystemMonitor
