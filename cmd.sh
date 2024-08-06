@@ -20,14 +20,16 @@ help(){
         "\tbash cmd.sh uninstall                    执行: uninstall\n"\
         "\tbash cmd.sh tar                          执行: generate tar.gz\n"\
         "\tbash cmd.sh lang                         执行: generate language file\n"\
-        "\tbash cmd.sh ldd file_path                执行: List dynamic link libraries\n"\
+        "\tbash cmd.sh ldd file_path                执行: List dynamic link libraries, copy to lib dir\n"\
+        "\tbash cmd.sh ldd_app                      执行: List dynamic link libraries,  Linux System, copy to lib dir\n"\
+        "\tbash cmd.sh ldd_qt                       执行: List dynamic link libraries,  Qt, copy to lib dir\n"\
         \
         "\tbash cmd.sh add [message]                执行: git add and commit, not include git push\n"\
         "\tbash cmd.sh push, add_push [message]     执行: git add, commit and push\n"\
         "\tbash cmd.sh init                         执行: git init and first commit\n"\
         "\tbash cmd.sh user [username] [email]      执行: git config user\n"\
         "\tbash cmd.sh conf_list                    执行: git config --list\n"\
-        # "\tbash cmd.sh reset_cache                  执行: git rm cache 更新仓库管理规则"
+        "\tbash cmd.sh reset_cache                  执行: git rm cache 更新仓库管理规则"
 }
 
 if [[ $arg1 = 'install' ]];then
@@ -40,6 +42,16 @@ elif [[ $arg1 = 'lang' ]];then
     bash script/language.sh
 elif [[ $arg1 = 'ldd' ]];then
     bash script/ldd.sh $arg2
+elif [[ $arg1 = 'ldd_app' ]];then
+    bash script/ldd.sh ./bin/SystemMonitor
+elif [[ $arg1 = 'ldd_qt' ]];then
+    qt=/home/jyu/install/Qt5.14.2/5.14.2/gcc_64
+    qt_plugins=$qt/plugins
+    qt_plugins_platforms=$qt/plugins/platforms
+    qt_plugins_platforms_xcb=$qt/plugins/platforms/libqxcb.so
+
+    bash script/ldd.sh $qt_plugins_platforms_xcb
+    cp -r $qt_plugins_platforms lib/
 # git
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
