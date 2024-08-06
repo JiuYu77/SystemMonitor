@@ -71,13 +71,13 @@ bash cmd.sh uninstall
 ```
 
 # 运行截图
-![](res/images/readme_01.png)
+![](res/readme/readme_01.png)
 
-![](res/images/readme_02.png)
+![](res/readme/readme_02.png)
 
-![](res/images/readme_03_English.png)
+![](res/readme/readme_03_English.png)
 
-![](res/images/readme_04_English.png)
+![](res/readme/readme_04_English.png)
 
 # 致谢
 [ctguLMY/linux_terminal_monitor](https://github.com/ctguLMY/linux_terminal_monitor)
