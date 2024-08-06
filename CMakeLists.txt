@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
+# 添加-Wall编译选项
+add_compile_options(-Wall)
+
 # 设置目标系统为Linux，这可以根据你的目标系统进行调整
 set(CMAKE_SYSTEM_NAME Linux)
  
@@ -23,7 +26,7 @@ set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT
 set(PROJECT_VERSION_ALL "${PROJECT_VERSION}-${PROJECT_VERSION_SYSTEM}-${PROJECT_VERSION_ARCH} ${PROJECT_VERSION_TIME}")
 message("项目版本号：${PROJECT_VERSION}")
 set(VERSION_FILE "${CMAKE_SOURCE_DIR}/config/version.h.in")
-configure_file("${VERSION_FILE}" "${CMAKE_BINARY_DIR}/config/version.h")
+configure_file("${VERSION_FILE}" "${CMAKE_BINARY_DIR}/config/version.h")  
 
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -79,7 +82,6 @@ set(CMAKE_PREFIX_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64")
 # export QT_QPA_PLATFORM=xcb  # 提示信息: qt.qpa.plugin: Could not find the Qt platform plugin "dxcb" in "" ===> 则在shell中，手动执行此命令
 # set(QT_QPA_PLATFORM "xcb")
 # set(QT_QPA_PLATFORM_PLUGIN_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64/plugins")  # Qt插件目录。目前不需要设置
-# set(QT_QPA_PLATFORM_PLUGIN_PATH "/home/jyu/install/Qt5.14.2/5.14.2/gcc_64/lib")  # Qt插件目录，这一行和上一行 用哪一个？目前不需要设置
 
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 

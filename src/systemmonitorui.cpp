@@ -141,7 +141,7 @@ void SystemMonitorApp::setMenu()
 void SystemMonitorApp::changeColor()
 {
     QFont font;
-    label_up;
+    // label_up;
     label_up_speed->setFont(font);
 }
 void SystemMonitorApp::set_SystemMonitorApp_Style()
