@@ -16,7 +16,7 @@ fi
 # Run this to update the launcher file with the current path to the application Exec
 if [ -w "$APPDIR"/SystemMonitor.desktop ]; then
 	echo "set_launcher_Exec:..."
-	sed -i -e "s@^Exec=.*@Exec=$APPDIR/bin/SystemMonitor@" "$APPDIR"/SystemMonitor.desktop
+	sed -i -e "s@^Exec=.*@Exec=$APPDIR/SystemMonitor@" "$APPDIR"/SystemMonitor.desktop
 else
 	echo "$APPDIR"/SystemMonitor.desktop is not writable
 	exit 1
@@ -30,6 +30,6 @@ echo "Symlink_path: "$path
 echo "Symlink SystemMonitor.desktop into ~/.local/share/applications/:..."
 ln -s $path ~/.local/share/applications/SystemMonitor.desktop
 
-echo "set_lib..."
+# echo "set_lib..."
 # echo export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$root/lib >> $HOME/.bashrc
 # sudo ln -s $root/lib /usr/lib/SystemMonitor
