@@ -43,7 +43,7 @@ elif [[ $arg1 = 'lang' ]];then
 elif [[ $arg1 = 'ldd' ]];then
     bash script/ldd.sh $arg2
 elif [[ $arg1 = 'ldd_app' ]];then
-    bash script/ldd.sh ./bin/SystemMonitor
+    bash script/ldd.sh ./SystemMonitor
 elif [[ $arg1 = 'ldd_qt' ]];then
     qt=/home/jyu/install/Qt5.14.2/5.14.2/gcc_64
     qt_plugins=$qt/plugins
