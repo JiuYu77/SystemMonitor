@@ -2,6 +2,7 @@
 build/
 bin/
 lib/
+libs/
 CMakeLists.txt.user.*
 CMakeCache.txt
 cmake_install.cmake
