@@ -13,7 +13,7 @@ std::string getExecutablePath() {
     buf[len] = '\0';
     return std::string(buf);
 }
- 
+
 
 int main(int argc, char *argv[])
 {
