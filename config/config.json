@@ -1,30 +1,31 @@
 {
-    "windowIcon": ":/res/images/logo64.ico",
-    "toolIcon": ":/res/images/small.png",
-    "SysAppStyle":{
+    "Language": {
+        "flag": true,
+        "index": 0,
+        "language": "中文(简体)"
+    },
+    "SysAppStyle": {
         "begin": "SystemMonitorApp{padding:0px;margin:0px;",
+        "bkgColor": "background-color: rgba(253,253,254,1);",
+        "bkgImage": "background-image: url(:/res/images/logo64.png);",
         "border": "border: 2px solid #ff00ff00;",
         "border-radius": "border-radius:10px;",
-        "bkgImage": "background-image: url(:/res/images/logo64.png);",
-        "bkgColor": "background-color: rgba(253,253,254,1);",
-        "end": "}",
         "border_color": true,
+        "end": "}",
         "use_border": true
     },
-    "labelStyle":{
-        "begin":"QLabel#label_up,QLabel#label_up_speed,QLabel#label_down,QLabel#label_down_speed,QLabel#label_cpu,QLabel#label_cpu_usage_rate,QLabel#label_memory,QLabel#label_memory_usage_rate{",
+    "auto_start": false,
+    "labelStyle": {
+        "begin": "QLabel#label_up,QLabel#label_up_speed,QLabel#label_down,QLabel#label_down_speed,QLabel#label_cpu,QLabel#label_cpu_usage_rate,QLabel#label_memory,QLabel#label_memory_usage_rate{",
+        "end": "}",
         "fontColor": "color: green;",
-        "fontSize":"font-size:12pt;",
-        "end":"}"
+        "fontSize": "font-size:12pt;"
     },
-    "position":{
+    "position": {
         "x": 0,
         "y": 0
     },
-    "auto_start": false,
-    "Language": {
-        "flag": false,
-        "language": "中文(简体)",
-        "index":0
-    }
+    "toolIcon": ":/res/images/small.png",
+    "version": "1.0.0-linux-x86_64 (2024.08.03)",
+    "windowIcon": ":/res/images/logo64.ico"
 }

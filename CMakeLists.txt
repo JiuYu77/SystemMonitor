@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # 添加-Wall编译选项
 add_compile_options(-Wall)
+# 禁用栈保护
+add_compile_options(-fno-stack-protector)
 
 # 设置目标系统为Linux，这可以根据你的目标系统进行调整
 set(CMAKE_SYSTEM_NAME Linux)
@@ -158,9 +160,9 @@ set_target_properties(SystemMonitor PROPERTIES BUILD_RPATH "$ORIGIN/../lib") # �
 #    OUTPUT_NAME ${PROJECT_NAME}
 #    INSTALL_RPATH "${ORIGIN}/../lib"
 #)
+# set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/path/to/lib")
 #set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN:/usr/lib/SystemMonitor")
-#set_target_properties(SystemMonitor PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
 
 
 # --------------------------------------------------------------
