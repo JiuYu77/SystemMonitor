@@ -125,8 +125,8 @@ set(PROJECT_SOURCES
     include/utils/json.h
     src/utils/qtui.cpp
     include/utils/qtui.h
-    src/utils/mfile.cpp
-    include/utils/mfile.h
+    src/utils/cxxfile.cpp
+    include/utils/cxxfile.h
     # ${TS_FILES}
     res.qrc
 )

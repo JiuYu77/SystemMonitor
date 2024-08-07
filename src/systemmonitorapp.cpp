@@ -6,6 +6,7 @@ SystemMonitorApp::SystemMonitorApp(QWidget *parent)
     // : QMainWindow(parent)
     : Win(parent)
 {
+    setPath();
     setConfigPath();
     read_config_json(config_path, config_data);
     initLanguage();  // 设置语言，要在创建控件之前设置;
@@ -97,23 +98,10 @@ void* SystemMonitorApp::update_speed(void* arg)
  */
 void SystemMonitorApp::setConfigPath()
 {
-    // 获取可执行文件的路径
-    executablePath = QCoreApplication::applicationDirPath();
-    QDir dir(executablePath);
-    qDebug() << "Executable Path:" << executablePath;
-    if (dir.cdUp()) {
-        parentDir = dir.absolutePath();
-        qDebug() << "Parent directory:" << parentDir;
-    } else {
-        qDebug() << "Unable to go up one level in the directory hierarchy.";
-    }
-    q_parentDir = QDir(parentDir);
     // 获取资源文件的路径
-    // QString path = QDir(parentDir).absoluteFilePath("config/default.json");
-    QString path = q_parentDir.absoluteFilePath("config/default.json");
+    QString path = qdir_parentDir.absoluteFilePath("config/default.json");
     default_path = qstrToStdString(path);
-    // QString path2 = QDir(parentDir).absoluteFilePath("config/config.json");
-    QString path2 = q_parentDir.absoluteFilePath("config/config.json");
+    QString path2 = qdir_parentDir.absoluteFilePath("config/config.json");
     config_path = qstrToStdString(path2);
     qDebug() << "default.json directory:" << path;
     qDebug() << "config.json  directory:" << path2;

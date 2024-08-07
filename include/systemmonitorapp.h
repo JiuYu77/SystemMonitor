@@ -44,9 +44,7 @@ public:
     SystemMonitorApp(QWidget *parent = nullptr);
     ~SystemMonitorApp();
     void update_UI();  // json; 更新界面
-    QString executablePath;
-    QString parentDir;
-    QDir q_parentDir;
+
     std::string default_path;
     std::string config_path;
     QTranslator translator;

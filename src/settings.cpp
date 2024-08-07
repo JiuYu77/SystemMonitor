@@ -163,7 +163,7 @@ void SettingsDialog::setBkgPath()
     std::string bkg_path = bkg_img.substr(22, len-24);
     if(bkg_path == ":/res/images/logo64.png")
     {
-        bkg_path = qstrToStdString(m_parent->parentDir) + "/res/images/logo64.png";
+        bkg_path = qstrToStdString(m_parent->parent_dir) + "/res/images/logo64.png";
     }
     lineEdit_bkg_path->setText(QString::fromStdString(bkg_path));
 }
@@ -301,7 +301,7 @@ void SettingsDialog::getAutoStartFlag()
 }
 void SettingsDialog::setAutoStart(bool auto_start)
 {
-    std::string desktop_path = qstrToStdString(m_parent->q_parentDir.absoluteFilePath("SystemMonitor.desktop"));
+    std::string desktop_path = qstrToStdString(m_parent->qdir_parentDir.absoluteFilePath("SystemMonitor.desktop"));
     std::cout << desktop_path<<std::endl;
     std::string home_path = getHomePath();  // 家目录
     std::string auto_dir = "/.config/autostart/";
