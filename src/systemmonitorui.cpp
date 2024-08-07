@@ -61,50 +61,57 @@ void SystemMonitorApp::createLabel()
 
     int shift_left = 12;
     int shift_top = 0;
-    const int step_top = 2;
     const int step = 2;
     int shift = shift_left + step;
-    QSize up_down_size(40, 20);
+    const int label_height = 25;
+    QSize up_size(40, label_height);
     // up speed
     label_up->setText(translate("monitor", "Up") +":");
     label_up->setAlignment(Qt::AlignRight);
-    label_up->setFixedWidth(up_down_size.width());
-    // label_up->setFixedSize(up_down_size);
-    label_up->move(QPoint(shift_left, shift_top+step_top));
+    // label_up->setFixedWidth(up_down_size.width());
+    label_up->setFixedSize(up_size);
+    label_up->move(QPoint(shift_left, shift_top));
     label_up_speed->setText("0KB/s");
+    label_up_speed->setFixedHeight(up_size.height());
     // label_up_speed->setFixedSize(65, 20);
     label_up_speed->move(QPoint(label_up->width()+shift, shift_top));
 
     // down speed
     int t = 6;
-    QSize down_size(up_down_size.width()+t, 20);
+    QSize down_size(up_size.width()+t, label_height);
     int s_left = shift_left-t;
     label_down->setText(translate("monitor", "Down") + ":");
     label_down->setAlignment(Qt::AlignRight);
-    label_down->setFixedWidth(down_size.width());
-    label_down->move(s_left, h/2+shift_top+step_top);
+    // label_down->setFixedWidth(down_size.width());
+    label_down->setFixedSize(down_size);
+    label_down->move(s_left, h/2+shift_top);
     label_down_speed->setText("0KB/s");
+    label_down_speed->setFixedHeight(down_size.height());
     s_left = shift-t;
     label_down_speed->move(QPoint(label_down->width()+s_left, h/2+shift_top));
 
     // CPU
     shift_left = 15;
     shift = shift_left + step;
-    QSize cpu_size(40, 20);
+    QSize cpu_size(40, label_height);
     label_cpu->setText("CPU:");
+    label_cpu->setFixedSize(cpu_size);
     label_cpu->setAlignment(Qt::AlignRight);
     label_cpu->setFixedWidth(cpu_size.width());
-    label_cpu->move(w/2+shift_left, shift_top+step_top);
+    label_cpu->move(w/2+shift_left, shift_top);
     label_cpu_usage_rate->setText("0%");
+    label_cpu_usage_rate->setFixedHeight(cpu_size.height());
     label_cpu_usage_rate->move(w/2+cpu_size.width()+shift, shift_top);
 
     // memory
-    QSize memory_size(40, 20);
+    QSize memory_size(40, label_height);
     label_memory->setText(translate("monitor", "MEM") + ":");
-    label_memory->setFixedWidth(memory_size.width());
+    // label_memory->setFixedWidth(memory_size.width());
+    label_memory->setFixedSize(memory_size);
     label_memory->setAlignment(Qt::AlignRight);
-    label_memory->move(w/2+shift_left, h/2+shift_top+step_top);
+    label_memory->move(w/2+shift_left, h/2+shift_top);
     label_memory_usage_rate->setText("0%");
+    label_memory_usage_rate->setFixedHeight(memory_size.height());
     label_memory_usage_rate->move(w/2+memory_size.width()+shift, h/2+shift_top);
 }
 /**
