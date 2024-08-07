@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QCoreApplication>
 
+// 获取可执行文件的绝对路径
 std::string getExecutablePath() {
     char buf[PATH_MAX];
     ssize_t len = readlink("/proc/self/exe", buf, sizeof(buf) - 1);
