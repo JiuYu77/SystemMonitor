@@ -60,7 +60,7 @@ void SystemMonitorApp::createLabel()
     label_memory_usage_rate->setObjectName("label_memory_usage_rate");
 
     int shift_left = 12;
-    int shift_top = 0;
+    int shift_top = 2;
     const int step = 2;
     int shift = shift_left + step;
     const int label_height = 25;
