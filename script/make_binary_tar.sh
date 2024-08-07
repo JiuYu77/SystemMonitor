@@ -5,7 +5,7 @@ name=`ls |grep ^SystemMonitor-[0-9]\.[0-9]\.[0-9]-linux-x86_64$`
 echo "tar source_path: "$name
 
 
-cp -r bin/ config/ lib/ res/ README.md SystemMonitor.desktop \
+cp -r bin/ config/ lib/ res/ README_tar.md SystemMonitor.desktop \
       SystemMonitor-*/
 
 path=$name/script
