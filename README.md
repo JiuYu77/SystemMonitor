@@ -37,8 +37,16 @@ cmake ..
 make
 ```
 # script
+
 ## cmd.sh
 通过`cmd.sh`调用其他bash脚本。
+
+```bash
+qt=/home/jyu/install/Qt5.14.2/5.14.2/gcc_64
+修改为：
+qt="你的 Qt gcc目录"
+```
+
 ```bash
 bash cmd.sh --help
 ```

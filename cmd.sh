@@ -51,7 +51,15 @@ elif [[ $arg1 = 'ldd_qt' ]];then
     qt_plugins_platforms_xcb=$qt/plugins/platforms/libqxcb.so
 
     bash script/ldd.sh $qt_plugins_platforms_xcb
-    cp -r $qt_plugins_platforms qt_plugins/
+    path=qt_plugins/
+    if [ -d "$path" ]; then
+        echo "目录存在：$path"
+    else
+        echo "目录不存在：$path"
+        echo "创建目录：$path"
+        mkdir $path
+    fi
+    cp -r $qt_plugins_platforms 
 # git
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
