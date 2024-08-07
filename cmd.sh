@@ -51,7 +51,7 @@ elif [[ $arg1 = 'ldd_qt' ]];then
     qt_plugins_platforms_xcb=$qt/plugins/platforms/libqxcb.so
 
     bash script/ldd.sh $qt_plugins_platforms_xcb
-    cp -r $qt_plugins_platforms bin/
+    cp -r $qt_plugins_platforms lib/
 # git
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"

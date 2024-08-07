@@ -99,9 +99,14 @@ void* SystemMonitorApp::update_speed(void* arg)
 void SystemMonitorApp::setConfigPath()
 {
     // 获取资源文件的路径
-    QString path = qdir_parentDir.absoluteFilePath("config/default.json");
+    // QString path = qdir_parentDir.absoluteFilePath("config/default.json");
+    // default_path = qstrToStdString(path);
+    // QString path2 = qdir_parentDir.absoluteFilePath("config/config.json");
+    // config_path = qstrToStdString(path2);
+
+    QString path = QDir(executable_path).absoluteFilePath("config/default.json");
     default_path = qstrToStdString(path);
-    QString path2 = qdir_parentDir.absoluteFilePath("config/config.json");
+    QString path2 = QDir(executable_path).absoluteFilePath("config/config.json");
     config_path = qstrToStdString(path2);
     qDebug() << "default.json directory:" << path;
     qDebug() << "config.json  directory:" << path2;
