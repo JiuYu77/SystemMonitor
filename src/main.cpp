@@ -1,7 +1,6 @@
 #include "systemmonitorapp.h"
 
 #include <QApplication>
-#include <QTextCodec>
 
 
 // 获取可执行文件的绝对路径
