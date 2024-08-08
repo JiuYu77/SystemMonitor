@@ -26,6 +26,7 @@ void Win::setSheet(QString filename)
 QString Win::getAppDir()
 {
     QString executable_path = QCoreApplication::applicationDirPath();
+    qDebug() << "applicationDirPath: " << executable_path;
     return executable_path;
 }
 /**
