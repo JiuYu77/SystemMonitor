@@ -59,7 +59,7 @@ elif [[ $arg1 = 'ldd_qt' ]];then
         echo "创建目录：$path"
         mkdir $path
     fi
-    cp -r $qt_plugins_platforms 
+    cp -r $qt_plugins_platforms $path
 # git
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
