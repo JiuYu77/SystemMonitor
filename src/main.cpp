@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
     // std::string qt_plugins = parent_dir + QString(QDir::separator()).toStdString() + "qt_plugins";
     // std::cout << "qt_plugins: " <<  qt_plugins << std::endl;
     // setenv("QT_PLUGIN_PATH", qt_plugins.c_str(), 1);
-    std::cout << "setenv. " << std::endl;
+
+    // std::cout << "setenv. " << std::endl;
 
     QApplication a(argc, argv);
     std::cout << "app start. " << std::endl;

@@ -64,6 +64,7 @@ elif [[ $arg1 = 'ldd_qt' ]];then
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
 elif [[ $arg1 == 'add_push' || $arg1 == 'push' ]];then
+    cp config/default.json config/config.json
     add_push "$arg2"
 elif [[ $arg1 == 'init' ]];then
     init
