@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=SystemMonitor
-Exec=/home/jyu/apro/SystemMonitor/bin/SystemMonitor
+Exec=/home/jyu/apro/SystemMonitor/SystemMonitor
 Icon=/home/jyu/apro/SystemMonitor/res/images/logo64.ico
 Terminal=false
 X-GNOME-SingleWindow=true
