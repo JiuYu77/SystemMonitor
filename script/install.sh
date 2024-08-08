@@ -14,13 +14,13 @@ else
 fi
 
 # Run this to update the launcher file with the current path to the application Exec
-if [ -w "$APPDIR"/SystemMonitor.desktop ]; then
-	echo "set_launcher_Exec:..."
-	sed -i -e "s@^Exec=.*@Exec=$APPDIR/SystemMonitor@" "$APPDIR"/SystemMonitor.desktop
-else
-	echo "$APPDIR"/SystemMonitor.desktop is not writable
-	exit 1
-fi
+# if [ -w "$APPDIR"/SystemMonitor.desktop ]; then
+# 	echo "set_launcher_Exec:..."
+# 	sed -i -e "s@^Exec=.*@Exec=$APPDIR/SystemMonitor@" "$APPDIR"/SystemMonitor.desktop
+# else
+# 	echo "$APPDIR"/SystemMonitor.desktop is not writable
+# 	exit 1
+# fi
 
 root=`pwd`
 echo "root: "$root

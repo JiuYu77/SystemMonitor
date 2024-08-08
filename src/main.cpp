@@ -17,21 +17,21 @@ std::string getExecutablePath() {
 
 int main(int argc, char *argv[])
 {
-    std::string executablePath;
-    try {
-        executablePath = getExecutablePath();
-        std::cout << "Executable path: " << executablePath << std::endl;
-    } catch (const std::runtime_error& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
+    // std::string executablePath;
+    // try {
+    //     executablePath = getExecutablePath();
+    //     std::cout << "Executable path: " << executablePath << std::endl;
+    // } catch (const std::runtime_error& e) {
+    //     std::cerr << "Error: " << e.what() << std::endl;
+    // }
 
 
-    QString parent_dir = SystemMonitorApp::getParentDir(QString::fromStdString(executablePath));
-    std::cout << "parent_dir: " <<  parent_dir.toStdString() << std::endl;
-    QString qt_plugins = parent_dir + QDir::separator() + "qt_plugins";
+    // QString parent_dir = SystemMonitorApp::getParentDir(QString::fromStdString(executablePath));
+    // std::cout << "parent_dir: " <<  parent_dir.toStdString() << std::endl;
+    // QString qt_plugins = parent_dir + QDir::separator() + "qt_plugins";
 
-    std::cout << "qt_plugins: " <<  qt_plugins.toStdString() << std::endl;
-    setenv("QT_PLUGIN_PATH", qt_plugins.toStdString().c_str(), 1);
+    // std::cout << "qt_plugins: " <<  qt_plugins.toStdString() << std::endl;
+    // setenv("QT_PLUGIN_PATH", qt_plugins.toStdString().c_str(), 1);
 
 
     // size_t i = executablePath.find_last_of('/');
