@@ -1,6 +1,7 @@
 #include "systemmonitorapp.h"
 
 #include <QApplication>
+#include <QSettings>
 
 
 // 获取可执行文件的绝对路径
@@ -14,25 +15,34 @@ std::string getExecutablePath() {
     return std::string(buf);
 }
 
+void set_QT_PLUGIN_PATH()
+{
+    std::string executablePath;
+    try {
+        executablePath = getExecutablePath();
+        std::cout << "Executable path: " << executablePath << std::endl;
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+    QString parent_dir = SystemMonitorApp::getParentDir(QString::fromStdString(executablePath));
+    std::cout << "parent_dir: " <<  parent_dir.toStdString() << std::endl;
+    QString qt_plugins = parent_dir + QDir::separator() + "qt_plugins";
+
+    std::cout << "qt_plugins: " <<  qt_plugins.toStdString() << std::endl;
+    setenv("QT_PLUGIN_PATH", qt_plugins.toStdString().c_str(), 1);
+    setenv("QT_QPA_PLATFORM_PLUGIN_PATH", (qt_plugins+"/platforms").toStdString().c_str(), 1);
+
+    std::cout << "set_QT_PLUGIN_PATH ... " << std::endl;
+}
 
 int main(int argc, char *argv[])
 {
-    // std::string executablePath;
-    // try {
-    //     executablePath = getExecutablePath();
-    //     std::cout << "Executable path: " << executablePath << std::endl;
-    // } catch (const std::runtime_error& e) {
-    //     std::cerr << "Error: " << e.what() << std::endl;
-    // }
+    // QLibrarySettings;
+    // QString qtconfig = QStringLiteral(":/qt.conf");
+    // if (QFile::exists(qtconfig))
+    //     return new QSettings(qtconfig, QSettings::IniFormat);
 
-
-    // QString parent_dir = SystemMonitorApp::getParentDir(QString::fromStdString(executablePath));
-    // std::cout << "parent_dir: " <<  parent_dir.toStdString() << std::endl;
-    // QString qt_plugins = parent_dir + QDir::separator() + "qt_plugins";
-
-    // std::cout << "qt_plugins: " <<  qt_plugins.toStdString() << std::endl;
-    // setenv("QT_PLUGIN_PATH", qt_plugins.toStdString().c_str(), 1);
-
+    set_QT_PLUGIN_PATH();
 
     // size_t i = executablePath.find_last_of('/');
     // std::string parent_dir = executablePath.substr(0, i);
@@ -41,7 +51,6 @@ int main(int argc, char *argv[])
     // std::cout << "qt_plugins: " <<  qt_plugins << std::endl;
     // setenv("QT_PLUGIN_PATH", qt_plugins.c_str(), 1);
 
-    // std::cout << "setenv. " << std::endl;
 
     QApplication a(argc, argv);
     std::cout << "app start. " << std::endl;
