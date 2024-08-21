@@ -161,9 +161,13 @@ void SettingsDialog::setBkgPath()
     std::string bkg_img = config_data["SysAppStyle"]["bkgImage"];
     int len = bkg_img.size();
     std::string bkg_path = bkg_img.substr(22, len-24);
-    if(bkg_path == ":/res/images/logo64.ico")
+    if(bkg_path[0] == ':')
+    // if(bkg_path == ":/res/images/logo64.ico")
     {
-        bkg_path = qstrToStdString(m_parent->parent_dir) + "/res/images/logo64.ico";
+        std::string tmp_path = bkg_path.substr(1);
+        // bkg_path = qstrToStdString(m_parent->parent_dir) + "/res/images/logo64.ico";
+        bkg_path = qstrToStdString(m_parent->parent_dir) + tmp_path;
+        // std::cout << "tmp_path: "<<tmp_path << std::endl;
     }
     lineEdit_bkg_path->setText(QString::fromStdString(bkg_path));
 }
