@@ -72,7 +72,10 @@ endif()
 
 # 存放打包可执行文件的目录
 set(tar_dir "${CMAKE_SOURCE_DIR}/${CMAKE_PROJECT_NAME}-${PROJECT_VERSION}-${PROJECT_VERSION_SYSTEM}-${PROJECT_VERSION_ARCH}")
-if(NOT EXISTS ${tar_dir})
+if(EXISTS ${tar_dir})
+  file(REMOVE_RECURSE ${tar_dir})
+  file(MAKE_DIRECTORY ${tar_dir})
+elseif(NOT EXISTS ${tar_dir})
   file(MAKE_DIRECTORY ${tar_dir})
 endif()
 
