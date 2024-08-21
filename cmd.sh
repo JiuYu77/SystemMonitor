@@ -48,6 +48,7 @@ elif [[ $arg1 = 'ldd_qt' ]];then
     qt=/home/jyu/install/Qt5.14.2/5.14.2/gcc_64
     qt_plugins=$qt/plugins
     qt_plugins_platforms=$qt/plugins/platforms
+    qt_plugins_imageformats=$qt/plugins/imageformats
     qt_plugins_platforms_xcb=$qt/plugins/platforms/libqxcb.so
 
     bash script/ldd.sh $qt_plugins_platforms_xcb
@@ -59,7 +60,7 @@ elif [[ $arg1 = 'ldd_qt' ]];then
         echo "创建目录：$path"
         mkdir $path
     fi
-    cp -r $qt_plugins_platforms $path
+    cp -r $qt_plugins_platforms $qt_plugins_imageformats $path
 # git
 elif [[ $arg1 == 'add' ]];then
     add "$arg2"
