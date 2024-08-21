@@ -30,9 +30,13 @@ void set_QT_PLUGIN_PATH()
 
     std::cout << "qt_plugins: " <<  qt_plugins.toStdString() << std::endl;
     setenv("QT_PLUGIN_PATH", qt_plugins.toStdString().c_str(), 1);
-    setenv("QT_QPA_PLATFORM_PLUGIN_PATH", (qt_plugins+"/platforms").toStdString().c_str(), 1);
-
     std::cout << "set_QT_PLUGIN_PATH ... " << std::endl;
+
+
+    QString qt_plugins_platforms = parent_dir + QDir::separator() + "qt_plugins" + QDir::separator() + "latforms";
+    std::cout << "qt_plugins_platforms: " <<  qt_plugins_platforms.toStdString() << std::endl;
+    setenv("QT_QPA_PLATFORM_PLUGIN_PATH", qt_plugins_platforms.toStdString().c_str(), 1);
+    std::cout << "set_QT_QPA_PLATFORM_PLUGIN_PATH ... " << std::endl;
 }
 
 int main(int argc, char *argv[])
@@ -41,6 +45,7 @@ int main(int argc, char *argv[])
     // QString qtconfig = QStringLiteral(":/qt.conf");
     // if (QFile::exists(qtconfig))
     //     return new QSettings(qtconfig, QSettings::IniFormat);
+
 
     set_QT_PLUGIN_PATH();
 
