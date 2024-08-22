@@ -17,8 +17,9 @@ SystemMonitorApp::SystemMonitorApp(QWidget *parent)
 
 SystemMonitorApp::~SystemMonitorApp()
 {
-    stopThread();
-    Exit();
+    stopThread();  // 先结束线程
+    del();
+    close();
 }
 
 void SystemMonitorApp::setConnect()
@@ -26,6 +27,7 @@ void SystemMonitorApp::setConnect()
     connect(actionExit, &QAction::triggered, this, &SystemMonitorApp::Exit);  // 退出程序
     connect(actionSettings, &QAction::triggered, settings_dialog, &SettingsDialog::show);  // 显示设置界面
     connect(actionReset, &QAction::triggered, this, &SystemMonitorApp::resetConfigJson);
+    connect(actionStaysOnTop, &QAction::triggered, this, &SystemMonitorApp::displayOnTop);
 }
 
 // 鼠标拖动窗口
@@ -167,6 +169,7 @@ void SystemMonitorApp::Exit()
     stopThread();  // 先结束线程
     del();
     close();
+    exit(0);
 }
 /**
  * 重启程序

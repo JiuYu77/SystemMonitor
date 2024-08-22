@@ -16,8 +16,8 @@ void SystemMonitorApp::initUI()
     setWindowFlag(Qt::FramelessWindowHint); // 取消显示标题栏
     setAttribute(Qt::WA_TranslucentBackground, true);
 
-    setWindowFlag(Qt::WindowStaysOnTopHint);  // 显示在最上层
-    setAttribute(Qt::WA_QuitOnClose, true);
+    // setWindowFlag(Qt::WindowStaysOnTopHint);  // 显示在最上层
+    // setAttribute(Qt::WA_QuitOnClose, true);
 
     this->createLabel();
 
@@ -207,6 +207,7 @@ void SystemMonitorApp::setConfigJson()
     set_SystemMonitorApp_Style();
     set_Syslabel_Style();
     setPosition();
+    setDisplayOnTopJson();
 }
 /**
  * 恢复默认配置
@@ -231,4 +232,40 @@ void SystemMonitorApp::resetConfigJson()
     read_config_json(config_path, config_data);
     setConfigJson();
     settings_dialog->config_data =settings_dialog->tmp_config_data = config_data;
+}
+
+void SystemMonitorApp::setDisplayOnTopFlag(bool flag)
+{
+    // if(flag){
+    //     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+    // }else if(flag == false){
+    //     setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
+    // }
+
+    setWindowFlag(Qt::WindowStaysOnTopHint, flag);
+    setAttribute(Qt::WA_QuitOnClose, true);  // 要放在Qt::WindowStaysOnTopHint的下面，否则点击退出选项时，程序不能正常退出
+    qDebug() << "setDisplayOnTopFlag(): " <<  windowFlags() ;
+    this->show();
+}
+// 界面初始化，设置是否显示在最上层
+void SystemMonitorApp::setDisplayOnTopJson()
+{
+    bool flag = config_data["display_top"];
+    qDebug() << "setDisplayOnTopJson(): " << flag ;
+
+    setDisplayOnTopFlag(flag);
+}
+/**
+ * 显示在最上层 On / Off
+ */
+void SystemMonitorApp::displayOnTop()
+{
+    config_data["display_top"] = !config_data["display_top"];
+    bool flag = config_data["display_top"];
+    settings_dialog->config_data["display_top"] = flag;
+    settings_dialog->tmp_config_data["display_top"] = flag;
+    qDebug() << "displayOnTop(): " << flag ;
+
+    setDisplayOnTopFlag(flag);
+    writeJsonFile(config_path, config_data);
 }

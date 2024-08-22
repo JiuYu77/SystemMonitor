@@ -67,6 +67,8 @@ private:
     void firstLanguage();
     void del();  // 释放内存
     void Exit();
+    void setDisplayOnTopFlag(bool flag);
+    void displayOnTop();
 
     QLabel *label_up, *label_up_speed; // 上传(上行)速度
     QLabel *label_down, *label_down_speed;  // 下载(下行)速度
@@ -107,6 +109,7 @@ private:
     void setPosition();
     void setConfigJson();  // json配置文件,设置界面
     void resetConfigJson();  // 恢复默认配置
+    void setDisplayOnTopJson();
     /** json **/
 };
 #endif // SYSTEMMONITORAPP_H
