@@ -9,37 +9,42 @@
         <translation>Up</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="82"/>
+        <location filename="../../src/systemmonitorui.cpp" line="83"/>
         <source>Down</source>
         <translation>Down</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="103"/>
+        <location filename="../../src/systemmonitorui.cpp" line="108"/>
         <source>MEM</source>
         <translation>MEM</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="130"/>
+        <location filename="../../src/systemmonitorui.cpp" line="137"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="131"/>
+        <location filename="../../src/systemmonitorui.cpp" line="138"/>
         <source>Settings</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="132"/>
+        <location filename="../../src/systemmonitorui.cpp" line="139"/>
         <source>Restore default configuration</source>
         <translation>Restore default configuration</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="209"/>
+        <location filename="../../src/systemmonitorui.cpp" line="140"/>
+        <source>Display on the top layer On/Off</source>
+        <translation>Display on the top layer On/Off</translation>
+    </message>
+    <message>
+        <location filename="../../src/systemmonitorui.cpp" line="219"/>
         <source>Prompt</source>
         <translation>Prompt</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="210"/>
+        <location filename="../../src/systemmonitorui.cpp" line="220"/>
         <source>Are you sure you want to restore the default configuration?</source>
         <translation>Are you sure you want to restore the default configuration?</translation>
     </message>
@@ -102,12 +107,12 @@
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../../src/settings.cpp" line="238"/>
+        <location filename="../../src/settings.cpp" line="242"/>
         <source>Prompt</source>
         <translation>Prompt</translation>
     </message>
     <message>
-        <location filename="../../src/settings.cpp" line="239"/>
+        <location filename="../../src/settings.cpp" line="243"/>
         <source>Language modification takes effect after restarting.</source>
         <translation>Language modification takes effect after restarting.</translation>
     </message>

@@ -137,7 +137,9 @@ void SystemMonitorApp::setMenu()
     actionExit = new QAction(translate("monitor", "Exit"), menu); // 菜单中的退出选项
     actionSettings = new QAction(translate("monitor", "Settings"), menu);  // 设置选项
     actionReset = new QAction(translate("monitor", "Restore default configuration"), menu);  // 恢复默认配置选项
+    actionStaysOnTop = new QAction(translate("monitor", "Display on the top layer On/Off"), menu);  // 显示在最上层选项
     menu->addAction(actionReset);
+    menu->addAction(actionStaysOnTop);
     menu->addAction(actionSettings);
     menu->addAction(actionExit);
     trayIcon->setContextMenu(menu); // 添加菜单

@@ -26,5 +26,6 @@
         "flag": false,
         "language": "中文(简体)",
         "index":0
-    }
+    },
+    "display_top": true
 }

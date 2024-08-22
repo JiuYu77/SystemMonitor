@@ -9,37 +9,42 @@
         <translation>上传</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="82"/>
+        <location filename="../../src/systemmonitorui.cpp" line="83"/>
         <source>Down</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="103"/>
+        <location filename="../../src/systemmonitorui.cpp" line="108"/>
         <source>MEM</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="130"/>
+        <location filename="../../src/systemmonitorui.cpp" line="137"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="131"/>
+        <location filename="../../src/systemmonitorui.cpp" line="138"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="132"/>
+        <location filename="../../src/systemmonitorui.cpp" line="139"/>
         <source>Restore default configuration</source>
         <translation>恢复默认配置</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="209"/>
+        <location filename="../../src/systemmonitorui.cpp" line="140"/>
+        <source>Display on the top layer On/Off</source>
+        <translation>显示在最上层 开/关</translation>
+    </message>
+    <message>
+        <location filename="../../src/systemmonitorui.cpp" line="219"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="../../src/systemmonitorui.cpp" line="210"/>
+        <location filename="../../src/systemmonitorui.cpp" line="220"/>
         <source>Are you sure you want to restore the default configuration?</source>
         <translation>确定要恢复默认配置？</translation>
     </message>
@@ -102,12 +107,12 @@
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../../src/settings.cpp" line="238"/>
+        <location filename="../../src/settings.cpp" line="242"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="../../src/settings.cpp" line="239"/>
+        <location filename="../../src/settings.cpp" line="243"/>
         <source>Language modification takes effect after restarting.</source>
         <translation>语言修改重启生效</translation>
     </message>

@@ -56,6 +56,7 @@ private:
     QAction *actionExit;
     QAction *actionSettings;
     QAction *actionReset;
+    QAction *actionStaysOnTop;
     void initUI();
     void setConfigPath();
     void setIcon();
