@@ -79,7 +79,7 @@ void CpuMemory::get_mem_usage(double *mem_used)
 {
     FILE *fd;
     /************
-    ** /proc / meminfo中包含系统允许内存信息
+    ** /proc/meminfo中包含系统允许内存信息
     **
     ****/
 
